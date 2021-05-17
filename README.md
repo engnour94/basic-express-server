@@ -31,7 +31,43 @@ Returns Object
 "name" : "your Name"
 }
 
- 
+ - Endpoint: `/`
+  - Returns message
+
+    ```
+
+    ''welcome to server.js';
+
+   
+
+    ```
+- Endpoint: `/person`
+  - Throws an error 500
+  - Returns an Object
+
+    ```
+
+    {
+    error:err,
+    status: 500,
+    message: err.message,
+    route: req.path,
+  
+    }
+
+    ```
+- Endpoint: **anything else ..**
+  - Returns an error 404
+  - Returns an Object
+
+    ```
+
+  {
+    status: 404,
+    message: 'page not found something went wrong',
+  }
+
+    ```
 #### Tests
 
 - Unit Tests: `npm run test`
