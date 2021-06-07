@@ -13,12 +13,17 @@ describe('validator', () => {
     expect(result.status).toEqual(500);
   });
 
-  it('Query string is not name', async() => {
+  it('Query string is a name', async() => {
     let name = 'Nour';
     let result = await request.get(`/person?name=${name}`);
     expect(result.status).toEqual(200);
   });
 
+  it('Query string is not a name', async() => {
+    let name = '';
+    let result = await request.get(`/person?name=${name}`);
+    expect(result.status).toEqual(500);
+  });
 
 });
 

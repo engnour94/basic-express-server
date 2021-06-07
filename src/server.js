@@ -16,8 +16,8 @@ function home(req,res){
 function badReq(req, res) {
   throw new Error('Something went wrong !!!!!');
 }
-
-app.get('/person', validator, (req, res) => {
+//
+app.get('/person', validator, (req, res) => { // validator is a custom middleware 
   res.status(200).json({
     name: req.query.name,
   });
